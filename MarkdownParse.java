@@ -10,6 +10,9 @@ public class MarkdownParse {
     static int findCloseParen(String markdown, int openParen) {
         int closeParen = openParen + 1;
         int openParenCount = 1;
+        if(!markdown.substring(openParen, markdown.length()).contains(")")){
+            return -1;
+        }
         while (openParenCount > 0) {
             if (markdown.charAt(closeParen) == '(') {
                 openParenCount++;
